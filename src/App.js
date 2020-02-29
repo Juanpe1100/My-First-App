@@ -1,34 +1,31 @@
-import React, { useState } from 'react';
-import MyComponent from './MyComponet'
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import './App.css'
+import logo from './logo.svg'
+const App = () => {
+    //const[name,setName] =useState('JuanBS')
+   const [contador, setContador] =useState(0)
 
-function App() {
-  const [ count, setCount ] = useState(0)
-
-  const addMount = () => {
-    setCount(count+1)
-  } 
-
-  const removeMount = () => {
-    setCount(count-1)
-  } 
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <MyComponent name="Johan"/>
-        <button onClick={addMount}>
-          +
-        </button>
-        <button onClick={removeMount}>
-          -
-        </button>
-        <h1>{count}</h1>
-      </header>
-    </div>
-  );
+   const sumar = () =>{
+       setContador(contador+1)
+   }
+   const restar = () =>{
+       setContador(contador-1)
+   }
+    return(
+        <div className="App">
+           <div className="App-header">
+               <img src={logo}
+               className="App-logo"></img>
+               <div>JuanBS</div>
+    <h5>{contador}</h5>
+               <button onClick={sumar}>
+               SUMAR
+               </button>
+               <button onClick={restar}>
+                   RESTAR 
+               </button>
+           </div>
+        </div>
+    )
 }
-
-export default App;
+export default App
